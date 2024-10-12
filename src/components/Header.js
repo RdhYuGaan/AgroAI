@@ -17,7 +17,7 @@ const Header = () => {
               <a href="#aboutus" className="hover:text-gray-300">About Us</a>
             </li>
             <li>
-              <a href="#ourproducts" className="hover:text-gray-300">Our Produc</a>
+              <a href="#ourproducts" className="hover:text-gray-300">Our Products</a>
             </li>
           </ul>
           <div className='flex space-x-2'>
