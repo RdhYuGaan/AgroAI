@@ -62,7 +62,7 @@ const Navbar = () => {
                         </div>
 
                         {/* Desktop Menu */}
-                        <div className="hidden md:flex md:items-center md:justify-center md:space-x-10 md:absolute md:inset-y-0 md:left-1/2 md:translate-x-1/2 lg:space-x-16 md:mt-8">
+                        <div className="hidden md:flex md:items-center md:justify-center md:space-x-10 md:absolute md:inset-y-0 md:left-1/2 md:translate-x-1/2 lg:space-x-8 md:mt-8">
                             <Link
                                 href="/"
                                 className={`text-lg font-medium transition-all duration-200 pb-6 ${isActive("/")
@@ -73,13 +73,13 @@ const Navbar = () => {
                                 Home
                             </Link>
                             <Link
-                                href="/products"
-                                className={`text-lg font-medium transition-all duration-200 pb-6 ${isActive("/products")
+                                href="/our-solutions"
+                                className={`text-lg font-medium transition-all duration-200 pb-6 ${isActive("/our-solutions")
                                     ? "text-green-500 border-b-4 border-green-500"
                                     : "text-gray-900 hover:text-green-500"
                                     }`}
                             >
-                                Products
+                                Our Solutions
                             </Link>
                             <Link
                                 href="/contacts"
