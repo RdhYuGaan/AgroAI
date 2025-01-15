@@ -1,3 +1,5 @@
+import Footer from "./Footer";
+
 const HeroSection = () => {
     return <div>
 
@@ -33,6 +35,7 @@ const HeroSection = () => {
                 </div>
             </div>
         </section>
+        <Footer />
     </div>;
 };
 export default HeroSection;
