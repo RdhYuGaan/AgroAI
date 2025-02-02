@@ -1,4 +1,4 @@
-## Agro AI 
+## Agro AI 🍀
 
 The "AgroAI" project, initiated by Sri Lankan undergraduates, aims to revolutionize tea nursery management by combining artificial intelligence and IoT technology. 
 The project provides precise fertilization scheduling, automated water management, and advanced disease detection. 
