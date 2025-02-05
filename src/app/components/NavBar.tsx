@@ -82,6 +82,16 @@ const Navbar = () => {
                                 Our Solutions
                             </Link>
                             <Link
+                                href="/our-production"
+                                className={`text-lg font-medium transition-all duration-200 pb-6 ${
+                                    isActive("/our-production")
+                                    ? "text-green-500 border-b-4 border-green-500"
+                                    : "text-gray-900 hover:text-green-500"
+                                }`}
+                                >
+                                Our Production
+                                </Link>
+                            <Link
                                 href="/contacts"
                                 className={`text-lg font-medium transition-all duration-200 pb-6 ${isActive("/contacts")
                                     ? "text-green-500 border-b-4 border-green-500"
@@ -234,6 +244,17 @@ const Navbar = () => {
                                     >
                                         Products
                                     </Link>
+                                    <Link
+                                        href="/our-production"
+                                        onClick={() => setExpanded(false)}
+                                        className={`flex items-center p-3 -m-3 text-base font-medium transition-all duration-200 rounded ${
+                                            isActive("/our-production")
+                                            ? "text-green-500 bg-gray-100"
+                                            : "text-gray-900 hover:bg-gray-50"
+                                        }`}
+                                        >
+                                        Our Production
+                                        </Link>
                                     <Link
                                         href="/contacts"
                                         onClick={() => setExpanded(false)} // Close menu on link click
