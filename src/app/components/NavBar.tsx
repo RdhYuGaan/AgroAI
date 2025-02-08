@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useAuth } from "../context/AuthContext";
+import Footer from "./Footer";
 
 const Navbar = () => {
     const { user, logout } = useAuth();
@@ -48,7 +49,7 @@ const Navbar = () => {
                             <div className="hidden md:flex items-center space-x-4 relative">
                                 {/* Alerts Icon */}
                                 <Link href="/alerts">
-                                    <img src="/images/bell-icon.png" alt="Alerts" className="w-6 h-6 cursor-pointer" />
+                                    <img src="/images/bell-icon.png" alt="Alerts" className="w-12 h-12 cursor-pointer" />
                                 </Link>
 
                                 {/* User Profile Dropdown */}
