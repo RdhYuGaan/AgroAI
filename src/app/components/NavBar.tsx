@@ -35,12 +35,46 @@ const Navbar = () => {
                             </button>
                         </div>
 
-                        {/* Desktop Navigation */}
-                        <div className="hidden md:flex md:items-center md:space-x-6">
-                            <Link href="/" className={`${currentPath === "/" ? "text-green-500" : "text-gray-900 hover:text-green-500"}`}>Home</Link>
-                            <Link href="/our-solutions" className={`${currentPath === "/our-solutions" ? "text-green-500" : "text-gray-900 hover:text-green-500"}`}>Our Solutions</Link>
-                            <Link href="/our-production" className={`${currentPath === "/our-production" ? "text-green-500" : "text-gray-900 hover:text-green-500"}`}>Our Production</Link>
-                            <Link href="/contacts" className={`${currentPath === "/contacts" ? "text-green-500" : "text-gray-900 hover:text-green-500"}`}>Contact Us</Link>
+                        {/* Desktop Menu */}
+                        <div className="hidden md:flex md:items-center md:justify-center md:space-x-10 md:absolute md:inset-y-0 md:left-1/3 md:translate-x-1/3 lg:space-x-8 md:mt-8">
+                            <Link
+                                href="/"
+                                className={`text-lg font-medium transition-all duration-200 pb-6 ${isActive("/")
+                                    ? "text-green-500 border-b-4 border-green-500"
+                                    : "text-gray-900 hover:text-green-500"
+                                    }`}
+                            >
+                                Home
+                            </Link>
+                            <Link
+                                href="/our-solutions"
+                                className={`text-lg font-medium transition-all duration-200 pb-6 ${isActive("/our-solutions")
+                                    ? "text-green-500 border-b-4 border-green-500"
+                                    : "text-gray-900 hover:text-green-500"
+                                    }`}
+                            >
+                                Our Solutions
+                            </Link>
+                            <Link
+                                href="/our-production"
+                                className={`text-lg font-medium transition-all duration-200 pb-6 ${
+                                    isActive("/our-production")
+                                    ? "text-green-500 border-b-4 border-green-500"
+                                    : "text-gray-900 hover:text-green-500"
+                                }`}
+                                >
+                                Our Production
+                                </Link>
+                            <Link
+                                href="/contacts"
+                                className={`text-lg font-medium transition-all duration-200 pb-6 ${isActive("/contacts")
+                                    ? "text-green-500 border-b-4 border-green-500"
+                                    : "text-gray-900 hover:text-green-500"
+                                    }`}
+                            >
+                                Contact Us
+                            </Link>
+
                         </div>
 
                         {/* Alerts & User Profile */}
