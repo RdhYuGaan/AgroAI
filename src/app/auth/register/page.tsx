@@ -1,21 +1,44 @@
-'use client'
+'use client';
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
+import { auth } from "../../../../firebase"; // Import Firebase auth
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const Register = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(""); // For handling errors
+    const router = useRouter();
 
     const handleRegister = async () => {
+        setError(""); // Clear any previous errors
 
+        // Validate inputs
+        if (!name || !email || !password) {
+            setError("Please fill in all fields.");
+            return;
+        }
+
+        try {
+            // Create user with email and password
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+            // Update user profile with the provided name
+            await updateProfile(userCredential.user, {
+                displayName: name,
+            });
+
+            console.log("User registered successfully:", userCredential.user);
+            router.push("/auth/login?success=Registered successfully! Please log in.");
+        } catch (error) {
+            console.error("Error during registration:", error.message);
+            setError(error.message); // Display error message to the user
+        }
     };
 
     return (
-
         <>
-
-
             <div className="min-h-screen bg-gray-100 flex items-center justify-center">
                 <div className="absolute bottom-0 right-0 overflow-hidden lg:inset-y-0 ">
                     <img
@@ -28,6 +51,13 @@ const Register = () => {
                     <h1 className="text-3xl font-semibold text-gray-700 mb-6 text-center">
                         Create Your Account
                     </h1>
+
+                    {/* Display error message */}
+                    {error && (
+                        <div className="mb-4 p-2 bg-red-100 text-red-600 text-sm rounded-md">
+                            {error}
+                        </div>
+                    )}
 
                     <div className="space-y-4">
                         {/* Name Field */}
@@ -68,9 +98,6 @@ const Register = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-
-
-
                     </div>
 
                     <button
@@ -92,8 +119,6 @@ const Register = () => {
                 </div>
             </div>
         </>
-
-
     );
 };
 
