@@ -100,6 +100,62 @@ const OurProduction: React.FC = () => {
           </div>
         </div>
       </div>
+      
+      <div className="flex justify-center items-center mb-12">
+        <div className="shadow-lg p-6 bg-white rounded-lg w-full max-w-5xl">
+          <h3 className="text-2xl font-semibold mb-4 text-emerald-600 text-center">Features</h3>
+          <h3>Product Information</h3>
+          <div className="grid grid-cols-2 gap-4">
+        <div className="font-semibold">Type:</div>
+        <div className="text-right">Farm Bot</div>
+        <div className="font-semibold">RAM:</div>
+        <div className="text-right">-</div>
+        <div className="font-semibold">SSD:</div>
+        <div className="text-right">1000 GB</div>
+        <div className="font-semibold">Processor Type:</div>
+        <div className="text-right">Intel Core i7-12700H</div>
+        <div className="font-semibold">PROCESSOR SPEED:</div>
+        <div className="text-right">2.3 - 4.7 GHz</div>
+        <div className="font-semibold">DISPLAY SIZE INCH:</div>
+        <div className="text-right">-</div>
+        <div className="font-semibold">DISPLAY SIZE SM:</div>
+        <div className="text-right">40.64 cm</div>
+        <div className="font-semibold">DISPLAY TYPE:</div>
+        <div className="text-right">OLED, TOUCHSCREEN, 120 Hz</div>
+        <div className="font-semibold">DISPLAY RESOLUTION:</div>
+        <div className="text-right">2880x1620</div>
+        <div className="font-semibold">VIDEO CARD TYPE:</div>
+        <div className="text-right">INTEL ARC A370M GRAPHICS</div>
+        <div className="font-semibold">GRAPHIC MEMORY SIZE:</div>
+        <div className="text-right">4 GB GDDR6</div>
+        <div className="font-semibold">WEB CAMERA:</div>
+        <div className="text-right">720p + IR</div>
+        
+          </div>
+        </div>
+      </div>
+      <div className="relative flex justify-center items-center mb-8">
+        <div className="shadow-lg p-4 bg-white rounded-lg w-full max-w-4xl relative">
+          <button className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-emerald-500 text-white p-2 rounded-full">
+        &lt;
+          </button>
+            <h3 className="text-center text-3xl font-semi-bold text-emerald-800 mb-3">Other Products</h3>
+            <div className="overflow-hidden">
+              <div className="flex justify-center transition-transform duration-500 ease-in-out">
+                <div className="min-w-[85%] mx-2 h-65">
+                <img 
+                src="/images/SlideCard1.png" 
+                alt="Slide 1" 
+                className="w-full h-full object-contain rounded-lg"
+                />
+                </div>
+              </div>
+            </div>
+          <button className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-emerald-500 text-white p-2 rounded-full">
+        &gt;
+          </button>
+        </div>
+      </div>
 
       <Footer />
     </div>
