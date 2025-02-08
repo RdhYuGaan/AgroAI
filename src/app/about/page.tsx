@@ -3,25 +3,23 @@ import Footer from "../components/Footer";
 const About = () => {
     return (
         <>
-            <div className="flex flex-col items-center justify-center h-screen bg-gray-100 text-center px-4">
-                {/* Title */}
-                <h2 className="text-2xl md:text-3xl font-semibold text-green-900 mb-6">
-                    Detect the Diseases: lorem_ipsum
-                </h2>
+            <section className="about-us-section flex items-center justify-center px-10 py-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    {/* Left Text Content */}
+                    <div className="text-content flex flex-col justify-center">
+                        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6">About us</h2>
+                        <p className="text-gray-700 text-lg leading-relaxed">
+                            AgroAI is at the forefront of agricultural technology, merging artificial intelligence with traditional farming practices. Our team of experts in IoT, AI, and agriculture is dedicated to building smart solutions to improve the productivity and sustainability of your crops. With years of experience in AI and IoT development, our goal is to make farming more efficient, cost-effective, and environmentally sustainable.
+                        </p>
+                    </div>
 
-                {/* Image */}
-                <div
-                    className="w-80 md:w-96 h-48 md:h-56 bg-cover bg-center rounded-lg shadow-md mb-6"
-                    style={{ backgroundImage: "url(/image.png)" }}
-                ></div>
-
-                {/* Button */}
-                <button
-                    className="bg-green-700 hover:bg-green-800 text-white text-lg font-medium px-6 py-3 rounded-full transition-all duration-300 shadow-md"
-                >
-                    Get The Solutions
-                </button>
-            </div>
+                    {/* Right Image Content */}
+                    <div
+                        className="image-content min-h-[300px] md:min-h-[400px] bg-cover bg-center rounded-lg shadow-lg"
+                        style={{ backgroundImage: 'url(/images/robot-vehicle.png)' }}
+                    ></div>
+                </div>
+            </section>
             <Footer />
         </>
     );
