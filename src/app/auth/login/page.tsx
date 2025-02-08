@@ -1,17 +1,27 @@
 'use client';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation'; // Import useRouter
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../../firebase"; 
 import { useAuth } from "@/app/context/AuthContext";
+import { useSearchParams } from "next/navigation";
 
 const Login = () => {
     const { login } = useAuth();
-    const navigate = useRouter();
+    const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const message = searchParams.get("success");
+        if (message) {
+            setSuccessMessage(message);
+        }
+    }, [searchParams]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -21,7 +31,7 @@ const Login = () => {
         try {
             const userCredential = await signInWithEmailAndPassword(auth, email, password);
             login(userCredential.user); // Update auth context with Firebase user
-            navigate.push('/');
+            router.push('/');
         } catch (error) {
             console.error(error);
             setError(getFirebaseErrorMessage(error));
