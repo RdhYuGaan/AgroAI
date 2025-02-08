@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { useAuth } from "../context/AuthContext";
-import Footer from "./Footer";
 
 const Navbar = () => {
     const { user, logout } = useAuth();
@@ -78,8 +77,8 @@ const Navbar = () => {
 
                         </div>
 
-                        {/* Alerts & User Profile */}
-                        {user && (
+                        {/* User Section */}
+                        {user ? (
                             <div className="hidden md:flex items-center space-x-4 relative">
                                 {/* Alerts Icon */}
                                 <Link href="/alerts">
@@ -100,6 +99,21 @@ const Navbar = () => {
                                         <button onClick={logout} className="block w-full text-left px-4 py-2 text-sm text-red-500 hover:bg-red-100">Logout</button>
                                     </div>
                                 )}
+                            </div>
+                        ) : (
+                            <div className="hidden md:flex items-center space-x-4">
+                                {/* Login Button */}
+                                <Link href="/auth/login">
+                                    <button className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">
+                                        Login
+                                    </button>
+                                </Link>
+                                {/* Signup Button */}
+                                <Link href="/auth/register">
+                                    <button className="px-4 py-2 border border-green-600 text-green-600 rounded-lg hover:bg-green-600 hover:text-white">
+                                        Signup
+                                    </button>
+                                </Link>
                             </div>
                         )}
                     </div>
