@@ -12,7 +12,7 @@ const DiseaseDetection = () => {
                 {/* Title */}
                 <h2 className="text-2xl md:text-3xl font-semibold text-green-900 mb-6">
                     Detect the Diseases: Rice Blast
-                </h2>
+                </h2> 
 
                 {/* Image */}
                 <img src="/images/tea-leave.png" alt="Rice Disease" className="w-80 md:w-96 h-48 md:h-56 bg-cover bg-center rounded-lg shadow-md mb-6" />
