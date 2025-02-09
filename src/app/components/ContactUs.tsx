@@ -23,7 +23,8 @@ const ContactUs = () => {
                     </li>
                     <li className="flex items-center space-x-4">
                         <FontAwesomeIcon icon={faMapMarker} style={{ width: "20px", marginRight: "10px" }} />
-                        <span>132 Dartmouth Street Boston, Massachusetts 02116, United States</span>
+                        <span>No.03, Weliva, Morawaka,
+                        Southern Province, Sri Lanka</span>
                     </li>
                 </ul>
             </div>
